@@ -751,15 +751,15 @@ function initWhatsAppLinks() {
     }
     
     // URLs do WhatsApp
-    const whatsappWeb = 'https://web.whatsapp.com/send?phone=5519978256532';
-    const whatsappMobile = 'https://api.whatsapp.com/send?phone=5519978256532';
+    const whatsappWeb = 'https://web.whatsapp.com/send?phone=5519978256532&text=Olá!%20Quero%20saber%20mais%20sobre%20os%20procedimentos%20da%20Dra.%20Marcella%20Achy';
+    const whatsappMobile = 'https://api.whatsapp.com/send?phone=5519978256532&text=Olá!%20Quero%20saber%20mais%20sobre%20os%20procedimentos%20da%20Dra.%20Marcella%20Achy';
     
     // Função para atualizar os links
     function updateWhatsAppLinks() {
         const currentUrl = isMobile() ? whatsappMobile : whatsappWeb;
         
         // Buscar todos os links que contêm WhatsApp, incluindo o botão flutuante e CTAs das seções
-        const whatsappLinks = document.querySelectorAll('a[href*="whatsapp.com"], a[href*="send?phone=5519978256532"], .whatsapp-btn, .btn-section-cta');
+        const whatsappLinks = document.querySelectorAll('a[href*="whatsapp.com"], a[href*="send?phone=5519978256532&text=Olá!%20Quero%20saber%20mais%20sobre%20os%20procedimentos%20da%20Dra.%20Marcella%20Achy"], .whatsapp-btn, .btn-section-cta');
         
         whatsappLinks.forEach(link => {
             link.href = currentUrl;
@@ -799,7 +799,7 @@ function initWhatsAppLinks() {
                 if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
                     mutation.addedNodes.forEach(function(node) {
                         if (node.nodeType === 1) { // Element node
-                            const hasWhatsAppLink = node.querySelector && node.querySelector('a[href*="whatsapp.com"], a[href*="send?phone=5519978256532"]');
+                            const hasWhatsAppLink = node.querySelector && node.querySelector('a[href*="whatsapp.com"], a[href*="send?phone=5519978256532&text=Olá!%20Quero%20saber%20mais%20sobre%20os%20procedimentos%20da%20Dra.%20Marcella%20Achy"]');
                             if (hasWhatsAppLink || (node.tagName === 'A' && node.href && node.href.includes('whatsapp.com'))) {
                                 shouldUpdate = true;
                             }
