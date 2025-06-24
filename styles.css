@@ -694,6 +694,9 @@ section {
     position: relative;
     height: 500px;
 }
+.about-image-grid .main-image .img-fluid {
+    margin-top: -30px;
+}
 
 .grid-item {
     position: absolute;
